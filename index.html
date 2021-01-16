@@ -24,50 +24,58 @@
         <div class="center">
             <h1>Gasto Mensual</h1>
         </div>
-
-        <div class="container centerform">
-            <div class="row">
-                <div class="col-sm">
-                    <div class="mb-3 row">
-                        <label for="inputPassword" class="col-sm-2 col-form-label">Gasto:</label>
-                        <div class="col-sm-10">
-                            <input type="password" class="form-control" id="inputPassword">
+        <form action="" id="agregar-gasto">
+            <div class="container centerform">
+                <div class="row">
+                    <div class="col-sm">
+                        <div class="mb-3 row">
+                            <label for="inputPassword" class="col-sm-2 col-form-label">Razon:</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="inputPassword">
+                            </div>
                         </div>
-                    </div>
-                    <div class="mb-3 row">
-                        <label for="inputPassword" class="col-sm-2 col-form-label">Cantidad:</label>
-                        <div class="col-sm-10">
-                            <input type="password" class="form-control" id="inputPassword">
+                        <div class="mb-3 row">
+                            <label for="inputPassword" class="col-sm-2 col-form-label">€:</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="inputPassword">
+                            </div>
                         </div>
+
+                        <button type="submit" class="btn btn-primary btn-lg">Agregar</button>
+
                     </div>
+        </form>
 
-                    <button type="button" class="btn btn-primary btn-lg">Agregar</button>
 
+        
+
+        <div class="col-sm">
+            <div class="list-group">
+                <div class>
+                    <li class="list-group-item active" aria-current="true">Lista de Gastos</li>
                 </div>
+                <br>
 
-                <div class="col-sm">
-                    <div class="list-group">
-                      
-                        <ul class="list-group pt-5">
-                            <li class="list-group-item active" aria-current="true">Lista de Gastos</li>
-                            <br>
-                          </ul>
+                <div id="gastos">
+                    <ul class="list-group">
                         
-                      </div>
-                    <br>
-                    <div class="list-group">
 
-                        <a href="#" class="list-group-item list-group-item-action list-group-item-primary">
-                           Presupuesto: </a>
-                       <br>
-                        <a href="#" class="list-group-item list-group-item-action list-group-item-danger">
-                            Restante:</a>
-
-                    </div>
+                    </ul>
                 </div>
+            </div>
+            <br>
 
+            <div class="list-group">
+                <a href="#" class="list-group-item list-group-item-action list-group-item-primary">
+                    Presupuesto: </a>
+                <br>
+                <a href="#" class="list-group-item list-group-item-action list-group-item-danger">
+                    Restante:</a>
             </div>
         </div>
+
+    </div>
+    </div>
 
 
 
