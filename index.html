@@ -26,18 +26,23 @@
         </div>
         <form action="" id="agregar-gasto">
             <div class="container centerform">
+                
+                <div class="primario">
+                    
+                </div>
+
                 <div class="row">
                     <div class="col-sm">
                         <div class="mb-3 row">
                             <label for="inputPassword" class="col-sm-2 col-form-label">Razon:</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="inputPassword">
+                                <input type="text" class="form-control" id="gasto">
                             </div>
                         </div>
                         <div class="mb-3 row">
-                            <label for="inputPassword" class="col-sm-2 col-form-label">€:</label>
+                            <label for="inputPassword" class="col-sm-2 col-form-label" >€:</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="inputPassword">
+                                <input type="text" class="form-control" id="cantidad">
                             </div>
                         </div>
 
@@ -51,6 +56,7 @@
 
         <div class="col-sm">
             <div class="list-group">
+                <br>
                 <div class>
                     <li class="list-group-item active" aria-current="true">Lista de Gastos</li>
                 </div>
@@ -66,11 +72,11 @@
             <br>
 
             <div class="list-group">
-                <a href="#" class="list-group-item list-group-item-action list-group-item-primary">
-                    Presupuesto: </a>
+                <div class="list-group-item list-group-item-action list-group-item-primary">
+                    <p> Preupuesto: € <span id="total"></span></p>  </div>
                 <br>
-                <a href="#" class="list-group-item list-group-item-action list-group-item-danger">
-                    Restante:</a>
+                <div class="list-group-item list-group-item-action list-group-item-danger">
+                   <p> Restante: € <span id="restante"></span></p>  </div>
             </div>
         </div>
 
