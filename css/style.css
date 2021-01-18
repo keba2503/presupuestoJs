@@ -22,3 +22,10 @@
     box-shadow: 2px 2px 10px rgb(18, 17, 17);
     opacity: 0.9;
 }
+
+.gasto {
+    background-color: #0D6EFD;
+    color: cornsilk;
+    border-radius: 0.2rem;
+    padding: 0.4rem;
+}
