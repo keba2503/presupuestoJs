@@ -24,12 +24,12 @@ class Presupuesto {
         this.calcularRestante();
     }
 
-calcularRestante () {
-    const gastado = this.gastos.reduce( (total, gasto) => total + gasto.cantidad, 0 );
-   this.restante = this.presupuesto - gastado;
-   console.log(this.restante);
+    calcularRestante() {
+        const gastado = this.gastos.reduce((total, gasto) => total + gasto.cantidad, 0);
+        this.restante = this.presupuesto - gastado;
+        console.log(this.restante);
 
-}
+    }
 
 }
 
@@ -100,17 +100,43 @@ class UI {
 
         });
     }
-limpiarHTML(){
-    while (listado.firstChild) {
-        listado.removeChild(listado.firstChild);
+
+    actualizarRestante(restante) {
+
+        document.querySelector('#restante').textContent = restante;
     }
-};
 
-actualizarRestante(restante){
-  
-    document.querySelector('#restante').textContent = restante;
-}
+    comprobarPresupuesto(presupuestoObj) {
+        const { presupuesto, restante } = presupuestoObj;
 
+        const restanteDiv = document.querySelector('.restante');
+
+        //comprobar 25% 
+        if ((presupuesto / 4) > restante) {
+            restanteDiv.classList.remove('alert-sucess');
+            restanteDiv.classList.add('alert-danger');
+        } else if( (presupuesto / 2) > restante) {
+            restanteDiv.classList.remove('alert-success');
+            restanteDiv.classList.add('alert-warning');
+        } else {
+            restanteDiv.classList.remove('alert-danger', 'alert-warning');
+            restanteDiv.classList.add('alert-success');
+        }
+
+        // Si presupuesta es igual a 0 
+        if(restante <= 0 ) {
+            ui.imprimirAlerta('El presupuesto se ha agotado', 'error');
+            formulario.querySelector('button[type="submit"]').disabled = true;
+        } 
+    }
+
+    
+
+    limpiarHTML() {
+        while (listado.firstChild) {
+            listado.removeChild(listado.firstChild);
+        }
+    }; 1200
 
 }
 
@@ -175,12 +201,14 @@ function agregarGasto(e) {
     const { restante } = presupuesto;
 
     // Actualizar cuanto nos queda
-    ui.actualizarRestante(restante)
-    
+    ui.actualizarRestante(restante);
+
+    //comprobar presupuesto
+    ui.comprobarPresupuesto(presupuesto);
+
+
     formulario.reset();
 
-
-
-
 }
+
 
