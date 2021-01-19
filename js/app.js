@@ -32,7 +32,7 @@ class Presupuesto {
     calcularRestante() {
         const gastado = this.gastos.reduce((total, gasto) => total + gasto.cantidad, 0);
         this.restante = this.presupuesto - gastado;
-        console.log(this.restante);
+       
 
     }
 
